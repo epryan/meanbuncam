@@ -11,9 +11,9 @@
 
 	- Optional: Import any existing images into meanbuncam/public/bunpics/ (of required format)
 	- Optional: Eliminate images below the size threshold (indicating a mostly dark image)
-			  	(from meanbuncam/services/) node piccleaner.js 
+			  	- (from meanbuncam/services/) node piccleaner.js 
 	- Optional: Run the populatedb.py 
-			  	(from meanbuncam/services/) python populatedb.py
+			  	- (from meanbuncam/services/) python populatedb.py
 
 	- Spawn the mongod instance to handle db connections
 		- mongod --fork --logpath /var/log/mongodb.log
