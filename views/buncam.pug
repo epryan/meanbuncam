@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+  section(class='row text-center placeholders')
+    for pic in bunpics
+      div.col-xs
+        a(href='/bunpics/' + pic.file_name alt='Bunny Pic')
+          //img.img-responsive(src= '/bunpics/thumbs/thumb_' + pic.file_name alt= pic.file_name style='margin: 10px 10px 10px 10px;')
+          img.img-responsive(src= '/bunpics/' + pic.file_name alt= pic.file_name style='margin: 10px 10px 10px 10px; height: 216px; width: 384px;')
+          div.caption.text-success
+            p= pic.date

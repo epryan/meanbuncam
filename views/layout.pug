@@ -1,0 +1,44 @@
+// A simple 'mixin' template for my sidebar links
+// (link, name) -> <li><a class="nav-link text-success" href="link">name</a></li>
+mixin sidebar-link(link, name)
+  li.nav-item
+    a.nav-link.text-success(href= link) #{name}
+
+doctype html
+html(lang='en')
+  head
+    title= title
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    description(content="A raspberry pi 'security camera' for my pets!")
+
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css')
+    script(src='https://code.jquery.com/jquery-3.1.1.slim.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js')
+    link(rel='stylesheet', href='/stylesheets/dashboard.css')
+
+  body.text-success(style= 'background: black')
+    nav(class='navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse')
+      button(class='navbar-toggler navbar-toggler-right' type='button' data-toggle='collapse' data-target='#navbarsExampleDefault' aria-controls='navbarsExampleDefault' aria-expanded='false' aria-label='Toggle navigation')
+        span(class='navbar-toggler-icon')
+      a(class='navbar-brand text-success' href='/')
+
+      div(class='collapse navbar-collapse' id='navbarsExampleDefault')
+        ul(class='navbar-nav ml-auto')
+          li.nav-item()
+            a.nav-link(href='/') Home
+          li.nav-item()
+            a.nav-link(href='/') Stream
+
+    div(class='container-fluid')
+      div.row
+        nav(class='col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar' style='background: #292b2c;')
+          ul(class='nav nav-pills flex-column')
+            +sidebar-link('/', 'Overview')
+            +sidebar-link('#', 'Last Hour')
+            +sidebar-link('#', 'Last Day')
+            +sidebar-link('#', 'Last Week')
+
+        main(class='col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3')
+          block content
