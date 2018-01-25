@@ -1,8 +1,8 @@
-#meanbuncam ie. PiBunCam
+MEANBunCam ie. PiBunCam
 
 A MEAN stack web app to host content from a Raspberry Pi based "bunny cam"
 
-#Usage
+Usage
 Clone the repo
 Create database folders (eg. meanbuncam/data/db)
 
