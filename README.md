@@ -1,4 +1,4 @@
-# PiBunCam
+# MEANBunCam ie. PiBunCam
 
 ## A MEAN stack web app to host content from a Raspberry Pi based "bunny cam"
 
