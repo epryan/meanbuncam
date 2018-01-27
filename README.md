@@ -16,7 +16,7 @@
 			  	- (from meanbuncam/services/) python populatedb.py
 
 	- Spawn the mongod instance to handle db connections
-		- mongod --fork --logpath /var/log/mongodb.log
+		- mongod --fork --logpath /var/log/mongodb.log --dbpath data/db
 
 	- Spawn the capture daemon to snap pictures on a timer
 		- nohup captured.py
